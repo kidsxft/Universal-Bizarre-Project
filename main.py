@@ -141,7 +141,8 @@ class autGame(customtkinter.CTkFrame):
         self.label.pack(pady=12, padx=10)
 
         # Display the user's stand
-        self.currentStandLabel = customtkinter.CTkLabel(self, text=f"Current Stand: None", font=("Roboto", 20))
+        stand = be.getData("stand", loggedUsername)
+        self.currentStandLabel = customtkinter.CTkLabel(self, text=f"Current Stand: {stand}", font=("Roboto", 20))
         self.currentStandLabel.pack(pady=12, padx=10)
 
         self.playBtn = customtkinter.CTkButton(self, text="Play", command=lambda: print("PLAY"))
